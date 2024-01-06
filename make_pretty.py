@@ -132,7 +132,48 @@ def make_pretty():
     output_pretty_theregister()
     directories = os.listdir('output')
     os.chdir('output')
-    complete_output = ""
+    complete_output = """
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1b32;
+  font-family: Tahoma;
+  font-size: 16px;
+}
+    form {
+        width: 80vw;
+        max-width: 700px;
+        min-width: 300px;
+        margin: 0 auto;
+        padding-bottom: 2em;
+    }
+    h3 {
+        color: lightblue;
+        text-align: center;
+        border-bottom: 3px solid #3b3b4f;
+    }
+    h4{
+        color: cadetblue;
+        text-align: center;
+    }
+    a:link{
+        color: cadetblue;
+        text-decoration: none;
+    }
+    a:visited{
+        color: cadetblue;
+        text-decoration: none;
+    }
+</style>
+</head>
+"""
+    file_ending ="</form>\n</body>\n</html>"
     #equals = "="*50
     for x in directories:
         if x == 'index.html':
@@ -140,9 +181,9 @@ def make_pretty():
         else:
             with open(x,'r') as file:
                 reading = file.read()
-                complete_output += f"<hr>\n<h3>{x.split('_')[0]}</h3>\n<hr>\n{reading}\n"
+                complete_output += f"<body>\n<form>\n<h3>{x.split('_')[0]}</h3>\n{reading}\n"
     with open('index.html','w') as file:
-        file.write(complete_output)
+        file.write(complete_output+file_ending)
     for x in directories:
         if x == 'index.html':
             pass
@@ -151,5 +192,8 @@ def make_pretty():
     os.chdir('../')
 
 #make_pretty()
+
+
+
 
 
