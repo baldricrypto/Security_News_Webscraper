@@ -162,6 +162,9 @@ def make_pretty():
         color: cadetblue;
         text-align: center;
     }
+    a {
+        word-wrap: break-word;
+    }
     a:link{
         color: cadetblue;
         text-decoration: none;
