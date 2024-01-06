@@ -12,7 +12,7 @@ buzzwords = ["malware",
              "hacked",
              "hackers",
              "malicious",
-             ]
+             ] #a list of common buzzwords incase you need to use it to help get the desired articles
 
 def output_pretty_hackernews():
     """Output scraped data from thehackernews in a nice easy to view format without images"""
