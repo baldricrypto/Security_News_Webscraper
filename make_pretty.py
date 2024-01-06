@@ -22,10 +22,13 @@ def output_pretty_hackernews():
     output = soup.find_all('a',class_='story-link')
     count = 0
     for x in output:
-        links.append((str(x)+'\n'))
-        count += 1
-        if count == 5:
-            break
+        if 'rel="nofollow noopener"' in str(x):
+            pass
+        else:
+            links.append((str(x)+'\n'))
+            count += 1
+            if count == 5:
+                break
     # regex_output = soup.find_all(string=re.compile('(?i)(?:malware|vulnerability|dark web|exploit|infostealer|backdoor|exploited|hacked|hackers|malicious|href)')) ---- Incase the need for this arises
     with open('output/thehackernews_temp_output.html','w', encoding='utf-8') as file:
         for x in links:
