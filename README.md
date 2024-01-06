@@ -1,7 +1,8 @@
 # Security_News_Webscraper
 A simple webscraper which gets the news from your favourite sources and presents them on a index.html page for you viewing pleasure
 
-This scraper isn't perfect... but it does work :)
+This scraper isn't perfect... but it does work :D
+*You just need to play around until you get the desired output*
 
 Before using, in the same directory that you plan to run the script create two folders, **output** & **webpage** 
 for some reason python freaks out and won't make the folders...
